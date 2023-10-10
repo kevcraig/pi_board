@@ -1,7 +1,6 @@
 import platform
 import os
 import http.client, urllib.request, urllib.parse, urllib.error, json, time 
-import pandas as pd
 from PIL import ImageFont # image
 from PIL import Image # image
 from PIL import ImageDraw # image
