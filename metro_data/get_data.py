@@ -24,15 +24,12 @@ def get_preds(StationCode):
     params = { 
         'StationCodes': StationCode
         }
-    try:
-        conn = http.client.HTTPSConnection('api.wmata.com')
-        conn.request("GET", "/StationPrediction.svc/json/GetPrediction/" + params['StationCodes'] ,"{body}", headers)
-        response = conn.getresponse()
-        data = response.read()
-        return(json.loads(data))
-        conn.close()
-    except Exception as e:
-        print("[Errno {0}] {1}".format(e.errno, e.strerror))
+    conn = http.client.HTTPSConnection('api.wmata.com')
+    conn.request("GET", "/StationPrediction.svc/json/GetPrediction/" + params['StationCodes'] ,"{body}", headers)
+    response = conn.getresponse()
+    data = response.read()
+    return(json.loads(data))
+    conn.close()
 
 # Control font switches between debuging on mac and raspberrypi
 def get_font():
