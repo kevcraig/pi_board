@@ -10,7 +10,7 @@ from PIL import ImageDraw # image
 board_station = 'A03' # dupont circle 
 
 # WMATA API key
-api_key = open("wmata_key.txt", "r") 
+api_key = open(os.getcwd() + "/api_key.txt", "r") 
 WMATA_KEY = api_key.read()
 headers = {
     'api_key': WMATA_KEY
